@@ -1,14 +1,25 @@
 <head>
-  <title>meteor</title>
+    <title>meteor</title>
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+            <form class="new-task">
+                <input type="text" name="text" placeholder="Type to add new tasks" />
+            </form>
+        </header>
+
+        <ul>
+            {{#each learnObjects}} {{> learnObject}} {{/each}}
+        </ul>
+    </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="learnObject">
+    <li>{{text}}
+        <button class="delete" data-id="{{_id}}">löschen</button>
+    </li>
 </template>
