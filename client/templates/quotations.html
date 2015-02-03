@@ -1,0 +1,23 @@
+<template name="quotations">
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>Quotations</h1>
+                <form class="new-task">
+                    <input type="text" name="quote" placeholder="Quote" />
+                    <input type="text" name="who" placeholder="Who?" />
+                    <input type="text" name="where" placeholder="Where?" />
+                    <input type="submit" />
+                </form>
+            </header>
+
+            <ul>
+                {{#each quotations}}
+                <li>{{quote}} - {{who}}- {{where}}
+                    <button class="delete" data-id="{{_id}}">löschen</button>
+                </li> {{/each}}
+            </ul>
+        </div>
+    </body>
+</template>

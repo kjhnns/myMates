@@ -1,6 +1,9 @@
-/* CSS declarations go here */
+.asd {
+   font-family: sans-serif;
+}
+
 body {
-  font-family: sans-serif;
+ @extend .asd;
   background-color: #315481;
   background-attachment: fixed;
 
@@ -30,6 +33,7 @@ header {
 }
 
 h1 {
+ @extend .asd;
   font-size: 1.5em;
   margin: 0;
   margin-bottom: 10px;
@@ -44,6 +48,7 @@ form {
 }
 
 .new-task input {
+ @extend .asd;
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
@@ -64,6 +69,7 @@ ul {
 }
 
 .delete {
+ @extend .asd;
   float: right;
   font-weight: bold;
   background: none;
@@ -73,6 +79,7 @@ ul {
 }
 
 li {
+ @extend .asd;
   position: relative;
   list-style: none;
   padding: 15px;
@@ -80,6 +87,7 @@ li {
 }
 
 li .text {
+ @extend .asd;
   margin-left: 10px;
 }
 
