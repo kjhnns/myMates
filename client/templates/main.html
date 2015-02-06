@@ -2,7 +2,9 @@
 
     <body>
         <div class="container">
-        {{currentUser.username}} - <p class="logout">Logout</p>
+{{#if currentUser}}
+        {{currentUser.username}} - <span class="logout">Logout</span>
+        {{/if}}
             {{> yield}}
         </div>
     </body>
