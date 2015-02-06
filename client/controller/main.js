@@ -3,9 +3,9 @@ Template.main.helpers({
 });
 
 Template.main.events({
-    'click .js-logout': function() {
+    'click .logout': function() {
         Meteor.logout();
 
-        Router.go('main');
+        Router.go('guests');
     },
 });
