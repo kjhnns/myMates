@@ -31,8 +31,6 @@ Router.map(function() {
     this.route('createAccount');
     this.route('guests');
 
-    this.route('quotations');
-
     this.route('main', {
         path: '/',
         action: function() {
