@@ -2,6 +2,9 @@
 
     <header>
         <h1>Quotations</h1>
+        {{#if error != null}}
+        <p>Fehler: {{error}}</p>
+        {{/if}}
         <form class="new-task">
             <input type="text" name="quote" placeholder="Quote" />
             <input type="text" name="who" placeholder="Who?" />
