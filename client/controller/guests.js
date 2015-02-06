@@ -1,10 +1,10 @@
-var ERRORS_KEY = 'loginErrors';
+var ERRORS_KEY = 'guestsErrors';
 
-Template.login.created = function() {
+Template.guests.created = function() {
   Session.set(ERRORS_KEY, {});
 };
 
-Template.login.helpers({
+Template.guests.helpers({
   errorMessages: function() {
     return _.values(Session.get(ERRORS_KEY));
   },
@@ -13,7 +13,7 @@ Template.login.helpers({
   }
 });
 
-Template.login.events({
+Template.guests.events({
   'submit': function(event, template) {
     event.preventDefault();
 
@@ -39,8 +39,7 @@ Template.login.events({
       if (error) {
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
-
-      Router.go('home');
+      Router.go('main');
     });
   }
 });
