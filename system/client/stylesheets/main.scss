@@ -1,96 +1,75 @@
+@import ".meteor/local/build/programs/server/assets/packages/meta_susy/susy";
+$susy: ( columns: 12, gutters: 1/4, math: fluid, output: float, gutter-position: inside, );
 .asd {
-   font-family: sans-serif;
+    font-family: sans-serif;
 }
-
 body {
- @extend .asd;
-  background-color: #315481;
-  background-attachment: fixed;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: 0;
-  margin: 0;
-
-  font-size: 14px;
+    @extend .asd;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
 }
-
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  min-height: 100%;
-  background: white;
+    /*@include span(8 of 12);*/
 }
-
 header {
-  background: #d2edf4;
-  padding: 20px 15px 15px 15px;
-  position: relative;
+    background: #d2edf4;
+    padding: 20px 15px 15px 15px;
+    position: relative;
 }
-
 h1 {
- @extend .asd;
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-right: 1em;
+    @extend .asd;
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 1em;
 }
-
 form {
-  margin-top: 10px;
-  margin-bottom: -10px;
-  position: relative;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position: relative;
 }
-
 .new-task input {
- @extend .asd;
-  box-sizing: border-box;
-  padding: 10px 0;
-  background: transparent;
-  border: none;
-  width: 100%;
-  padding-right: 80px;
-  font-size: 1em;
+    @extend .asd;
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding-right: 80px;
+    font-size: 1em;
 }
-
-.new-task input:focus{
-  outline: 0;
-}
-
 ul {
-  margin: 0;
-  padding: 0;
-  background: white;
+    margin: 0;
+    padding: 0;
+    background: white;
 }
-
 .delete {
- @extend .asd;
-  float: right;
-  font-weight: bold;
-  background: none;
-  font-size: 1em;
-  border: none;
-  position: relative;
+    @extend .asd;
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 1em;
+    border: none;
+    position: relative;
 }
-
 li {
- @extend .asd;
-  position: relative;
-  list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
+    @extend .asd;
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #eee solid 1px;
 }
-
 li .text {
- @extend .asd;
-  margin-left: 10px;
+    @extend .asd;
+    margin-left: 10px;
 }
-
 header .hide-completed {
-  float: right;
+    float: right;
 }

@@ -19,7 +19,7 @@ Template.quotations.helpers({
 });
 
 Template.quotations.events({
-    "submit .new-task": function(event, template) {
+    "submit .add": function(event, template) {
         var quote = template.$('[name=quote]').val(),
             where = template.$('[name=where]').val(),
             who = template.$('[name=who]').val();

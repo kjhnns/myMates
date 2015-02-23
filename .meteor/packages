@@ -7,7 +7,8 @@
 meteor-platform
 autopublish
 insecure
-stevezhu:sass
 aldeed:collection2
 accounts-password
 iron:router
+meta:susy
+fourseven:scss
