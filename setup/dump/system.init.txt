@@ -2,7 +2,7 @@
 /*
  * Created on Nov 6, 2009
  *
- * (c) by vanja k. | zigeuner51@gmail.com
+ * (c) by Johannes Klumpe | joh.klumpe@gmail.com
  */
 
 /*
