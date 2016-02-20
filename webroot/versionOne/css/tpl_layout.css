@@ -1,0 +1,148 @@
+#pg_center {
+	position: absolute;
+	left: 50%;
+	margin-left: -525px;
+}
+
+#pg_pageframe {
+	position: absolute;
+	width: 1050px;
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 30px;
+	min-height: 100%;
+	text-align:left;
+	overflow: hidden;
+}
+
+#online {
+	width: 140px;
+	height: 18px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 7px;
+	padding-bottom: 3px;
+	position: static;
+	text-align: center;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#pg_logo {
+	width: 130px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	background-color: #150558;
+	position: static;
+	border-right: 1px #123D98 solid;
+	text-align: center;
+	height: 18px;
+	padding-top: 3px;
+	padding-bottom: 7px;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#pg_headbar {
+	width: 1050px;
+	min-height: 5px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	background-color: #5772AB;
+	border: 1px #123D98 solid;
+}
+
+.pg_navButton {
+	width: 85px;
+	height: 18px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 7px;
+	padding-bottom: 3px;
+	background-color: #3B5998;
+	position: static;
+	border: 1px #123D98 solid;
+	border-top: 0px; border-bottom: 0px;
+	border-left: 0px;
+	text-align: center;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#pg_contentArea {
+	width: 747px;
+	min-height: 450px;
+	float: left;
+	margin: 0px;
+	padding: 10px;
+	border: 1px #000000 solid;
+	border-bottom: 0px;
+	position: static;
+	border-top: 0px;
+	text-align: justify;
+	background: #FFFFFF;
+	padding-bottom: 50px;
+}
+
+#pg_chat {
+	width: 266px;
+	height: 154px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border-bottom: 1px #000000 solid;
+	border-right: 1px #000000 solid;
+	position: static;
+	overflow: hidden;
+	background-color: #EEEEEE;
+}
+
+#pg_dynNavigation {
+	min-height: 215px;
+	width: 280px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	position: static;
+	border-right: 1px #000000 solid;
+	border-bottom: 1px #000000 solid;
+	background-color: #EEEEEE;
+}
+
+#pg_rightbar {
+	min-height: 200px;
+	width: 280px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	position: static;
+}
+
+#pg_bottom {
+	height: 22px;
+	width: 767px;
+	border: 1px #000000 solid;
+	float: left;
+	padding:0px;
+	margin: 0px;
+	padding-top: 5px;
+	background-color: #EEEEEE;
+	text-align: center;
+	overflow: hidden;
+}

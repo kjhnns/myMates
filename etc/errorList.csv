@@ -1,0 +1,10 @@
+001###Connection Error###There was an error establishing the connection to the database please check your configuration file.
+002###Language File is corrupt###The requested Language File is corrupt please contact your webmaster
+003###Page Template not found###The requested Pagetemplate cant be found please contact your webmaster
+004###Modul class cant be found###Script stopped cause the modul class cant be found please contact your webmaster
+005###Captcha Background Error###The randomized captcha background is to small for the requested captcha please contact your webmaster
+006###chmod error###The required folder is not writeable please contact your webmaster. You have to change the chmod on the folder to allow the script to edit files on the server.
+007###DB Config missing###The db config is missing for the db.class in the /etc folder
+008###servercheck failed###The server is not confirm with the requirements. The following requirements are needed to execute the script correctly: <br><ul><li>php5</li><li>mysql database</li><li>php gd library</li></ul><br>please check your enviroment and contact the server administration
+009###This is not your session ID###Please return to the index.php this is not your session ID, the ip validation failed. This error often dues to an IP change! Just refresh your Browser and you will create a new session.
+010###Delete setup folder###Before you run the script you have to delete the /setup/ folder!

@@ -1,0 +1,23 @@
+1. Lizenz
+---------------
+Mit dem Download und der Installation von myMates erkennen sie folgende Lizenzbedingungen an und verpflichten sich, diese einzuhalten.
+
+Lizenzbedingungen:
+
+Mit dem Download dieses Scriptes und dessen Installation verpflichten Sie sich dazu folgende Lizenzbedingungen einzuhalten.
+
+Das Script wird von dem Entwickler gratis zur Verfuegung gestellt. Trotz ausfuehrlicher Pruefungen kann der Entwickler nicht fuer moegliche Ausfaelle oder Schaeden die durch das Script entstehen haftbar gemacht werden.
+
+Die Software ist OpenSource, das heisst das Sie den Quelltext einsehen duerfen und ihn fuer eigene Beduerfnisse anpassen duerfen, jedoch ist es Ihnen Untersagt die Copyright Verweise zu entfernen.
+
+Es ist untersagt, das Script oder Teile des Scripts in irgendwelche Form zu verkaufen bzw. zu versteigern. Das ist selbst dann untersagt, wenn Copyright Verweise existieren.
+
+Wenn sie die Lizenzbedingungen nicht anerkennen oder gegen sie verstossen ist es Ihnen nicht erlaubt, das Script herunterzuladen, zu installieren, den SourceCode einzusehen bzw. zu veraendern und das Script zu verbreiten.
+
+
+2. Hinweise
+---------------
+E-Mail:   zigeuner51@gmail.com
+Homepage: www.kameltreiber.net
+
+Zum Abschluss der Installation wird eine E-Mail vom Script an zigeuner51@gmail.com geschickt zu rein statistischen Zwecken.

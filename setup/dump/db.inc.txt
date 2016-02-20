@@ -1,0 +1,15 @@
+<?php
+/*
+ * Created on 12.04.2008
+ *
+ * (c) by vanja k. | zigeuner51@gmail.com
+ */
+
+ $db_conf = array(
+						"host" 		=> "%s",
+						"user" 		=> "%s",
+						"password" 	=> "%s",
+						"database" 	=> "%s",
+						"prefix" 	=> "%s"
+ 					);
+?>

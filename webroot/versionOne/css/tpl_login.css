@@ -1,0 +1,138 @@
+body {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	font-size: 10px;
+	text-align: justify;
+}
+
+td {
+	text-align: justify;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	font-size: 12px;
+}
+
+a {
+	color: #150558;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #3020BB;
+	text-decoration:underline;
+}
+
+input {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	padding: 2px;
+}
+
+textarea {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 10px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+}
+
+h1 {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 13px;
+	background-color: #5772AB;
+	border-bottom: 3px #3B5998 solid;
+	padding: 3px;
+	color: #FFFFFF;
+	margin: 5px;
+	margin-left: -5px;
+}
+
+#pg_center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+}
+
+#pg_pageframe {
+	top: 30px;
+	position: absolute;
+	width: 430px;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	text-align:left;
+}
+
+
+#login_area {
+	background-color: #EEEEEE;
+	width: 400px;
+	height: 140px;
+	border: 1px #888888 solid;
+	float: left;
+	text-align: left;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	font-size: 10px;
+	padding: 10px;
+}
+
+#header {
+	width: 130px;
+	float: left;
+	margin: 0px;
+	background-color: #150558;
+	position: static;
+	border: 1px #000000 solid;
+	text-align: center;
+	height: 18px;
+	padding-top: 3px;
+	padding-bottom: 7px;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#loginTitle {
+	width: 268px;
+	height: 18px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 7px;
+	padding-bottom: 3px;
+	padding-left: 20px;
+	position: static;
+	background-color: #5772AB;
+	border: 1px #123D98 solid;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#box_area {
+	width: 420px;
+	height: 130px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+	background-color: #EEEEEE;
+	position: static;
+	border: 1px #000000 solid;
+	color: #000000;
+	padding: 10px;
+}
+
+#rights {
+	text-align: center;
+	color: #888888;
+	margin-top: 7px;
+}

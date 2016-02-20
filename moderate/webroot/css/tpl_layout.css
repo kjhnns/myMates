@@ -1,0 +1,40 @@
+body {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	font-size: 12px;
+	text-align: justify;
+}
+
+#pg_header {
+	background-color: #3B5998;
+	height: 50px;
+	font-size: 25pt;
+	color: #FFFFFF;
+	padding: 10px;
+	padding-left: 40px;
+	-moz-border-radius:	0px 20px 0px 0px;
+}
+
+#pg_nav {
+	background-color: #DEDEDE;
+	float:left;
+	height: 500px;
+	width: 200px;
+	padding: 10px;
+	font-family: Verdana;
+	font-size: 12pt;
+	-moz-border-radius: 0px 0px 30px 30px;
+}
+
+#pg_subhead {
+	background-color: #5772AB;
+	height:25px;
+	-moz-border-radius:	0px 0px 20px 0px;
+}
+
+#pg_content {
+	padding: 10px;
+	padding-left: 230px;
+}

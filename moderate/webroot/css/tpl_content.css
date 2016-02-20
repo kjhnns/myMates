@@ -1,0 +1,150 @@
+.box_info {
+	margin: 20px;
+	padding: 15px;
+	border: 3px #FFDC3A solid;
+	background-color: #FFFDBF;
+	min-height: 100px;
+}
+
+.box_warning {
+	margin: 20px;
+	padding: 15px;
+	border: 3px #D00101 solid;
+	background-color: #FFFDBF;
+	min-height: 100px;
+}
+
+.box_error {
+	margin: 20px;
+	padding: 15px;
+	border: 3px #D00101 solid;
+	background-color: #FFB1B1;
+	min-height: 50px;
+}
+
+.box_n {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #888888 solid;
+	background-color: #EEEEEE;
+	min-height: 100px;
+	text-align: justify;
+	color: #555555;
+}
+
+.box {
+	margin: 20px;
+	padding: 15px;
+	border: 1px #888888 solid;
+	background-color: #EEEEEE;
+	min-height: 100px;
+	text-align: justify;
+}
+
+.box_infoWrapper {
+	padding: 15px;
+	border: 3px #FFDC3A solid;
+	background-color: #FFFECF;
+	min-height: 100px;
+	display:none;
+	position: absolute;
+	left: 50%;
+	top: 35px;
+	margin: 0px;
+	margin-left: -25%;
+	width: 50%;
+	min-height: 200px;
+}
+
+#smallHeader {
+	font-size: 8pt;
+	color: #CCCCFF;
+}
+
+
+
+th {
+	font-family: "Trebuchet MS", Arial, "Lucida Sans Unicode", Tahoma, sans-serif;
+	font-size: 15px;
+	border-bottom: 2px #555555 dotted;
+	color: #3B5998;
+	text-align: left;
+}
+
+
+td {
+	text-align: justify;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	font-size: 12px;
+}
+
+a {
+	color: #223463;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #263b71;
+	text-decoration:underline;
+}
+
+label { cursor: pointer; }
+
+input {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	padding: 4px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+}
+
+select {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 10px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+}
+
+textarea {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	line-height: 1.5em;
+	padding: 4px;
+}
+
+h1 {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 13px;
+	background-color: #5772AB;
+	border-bottom: 3px #3B5998 solid;
+	padding: 3px;
+	color: #FFFFFF;
+	margin: 5px;
+}
+
+h2 {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 18px;
+	margin: 2px;
+	margin-left: 0px;
+}
+
+h3 {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 15px;
+	color: #3B5998;
+	margin: 2px;
+	margin-left: 0px;
+}
+
+h4 {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 15px;
+	color: #3B5998;
+	margin: 5px;
+	margin-left: -5px;
+	margin-top: 0px;
+	border-bottom: 3px #000000 solid;
+}

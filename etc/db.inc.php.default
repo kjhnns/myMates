@@ -1,0 +1,15 @@
+<?php
+/*
+ * Created on 12.04.2008
+ *
+ * (c) by Johannes Klumpe | joh.klumpe@gmail.com
+ */
+
+ $db_conf = array(
+						"host" 		=> "localhost",
+						"user" 		=> "user",
+						"password" 	=> "password",
+						"database" 	=> "database",
+						"prefix" 	=> ""
+ 					);
+?>

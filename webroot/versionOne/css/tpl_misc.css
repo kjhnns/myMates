@@ -1,0 +1,371 @@
+.navItem {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.navItem:hover {
+	color: #FFFFFF;
+	text-decoration:underline;
+}
+
+.avatar{
+	border: 1px #888888 solid;
+}
+
+#chatText {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 10px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+	width: 264px;
+}
+
+#chatBox {
+	width: 260px;
+	height: 110px;
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	padding: 2px;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	text-align: left;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#dynTitle {
+	height: 23px;
+	background-color: #5772AB;
+	border-bottom: 1px #000000 solid;
+	font-size: 12px;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	padding:0px;
+	padding-left: 10px;
+	padding-top: 7px;
+	margin: 0px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.nItem {
+	height: 23px;
+	background-color: #FEFEFE;
+	border-bottom: 1px #000000 solid;
+	font-size: 12px;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	padding:0px;
+	padding-left: 10px;
+	padding-top: 7px;
+	margin: 0px;
+}
+
+.nItem a {
+	color: #000000;
+}
+
+.nItem a:hover {
+	color: #150558;
+	text-decoration:underline;
+}
+
+.userLink {
+	text-decoration:underline;
+}
+
+.ltbl {
+	color: #333333;
+	font-size: 11px;
+	padding-right: 25px;
+	vertical-align: top;
+	width: 30%;
+}
+
+#clogPost {
+	border: 1px #000000 solid;
+	font-size: 13px;
+	padding: 5px;
+	width: 80%;
+}
+
+#clogPostButton {
+ 	width: 13%;
+	border: 1px #000000 solid;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #3B5998;
+	border: 1px #123D98 solid;
+	color: #FFFFFF;
+	padding: 4px;
+}
+
+.clogCommentPostButton {
+ 	width: 80px;
+	border: 1px #000000 solid;
+	font-size: 10px;
+	background-color: #3B5998;
+	border: 1px #123D98 solid;
+	color: #FFFFFF;
+	padding: 4px;
+	margin-left: 10px;
+	margin-top: 2px;
+}
+
+#tabClog {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 15px;
+	margin: 2px;
+	margin-left: 0px;
+	color: #000000;
+}
+
+#tabClog a {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 12px;
+	margin: 2px;
+	margin-left: 0px;
+	color: #000000;
+	text-decoration: none;
+}
+
+#tabClogSelected {
+	color: #3B5998;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 15px;
+	margin: 2px;
+	margin-left: 0px;
+}
+
+.clogpostimage {
+	border: 2px #AAAAAA solid;
+	cursor: pointer;
+	width: 150px;
+	height: 120px;
+}
+
+.clog_01 {
+	text-align:center;
+	font-size: 10px;
+	width: 135px;
+	color: #444444;
+	vertical-align:top;
+}
+
+.clog_02 {
+	font-size: 12px;
+	vertical-align:top;
+	color: #333333;
+}
+
+.clog_03 {
+	vertical-align:top;
+}
+
+.clog_04 {
+	vertical-align:top;
+	text-align: center;
+}
+
+.year {
+	font-size: 32px;
+	margin: 0px;
+	margin-top: -9px;
+	padding: 0px;
+	font-weight: bold;
+	color: #5375bd;
+}
+
+.mon {
+	font-size: 25px;
+	margin-top: -11px;
+	padding: 0px;
+	font-weight: bold;
+	font-family: Trebuchet MS;
+	color: #3B5998;
+}
+
+.time {
+	margin-top: -4px;
+	padding: 0px;
+	font-weight: bold;
+	color: #999999;
+}
+
+.trimmer {
+	padding: 10px;
+	text-align: center;
+}
+
+.album {
+	border: 1px #CCCCCC solid;
+	background: #EEEEEE;
+	margin: 10px;
+	padding: 10px;
+	padding-top: 5px;
+	padding-bottom:20px;
+	width: 155px;
+	min-height: 160px;
+	float: left;
+}
+
+.albumpic {
+	border: 1px #CCCCCC solid;
+	background: #EEEEEE;
+	margin: 10px;
+	padding: 10px;
+	width: 130px;
+	min-height: 150px;
+	float: left;
+	text-align: center;
+}
+
+.albumpiccomment {
+	border: 2px #FFDC3A solid;
+	background: #EEEEEE;
+	margin: 9px;
+	padding: 10px;
+	width: 130px;
+	min-height: 150px;
+	float: left;
+	text-align: center;
+}
+
+.albumpicedit {
+	border: 1px #CCCCCC solid;
+	background: #EEEEEE;
+	margin: 8px;
+	padding: 10px;
+	width: 65px;
+	min-height: 75px;
+	float: left;
+	text-align: center;
+}
+
+.albumTitle {
+	font-weight: bold;
+	font-family: 'Trebuchet MS';
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+#boxr {
+	position: relative;
+	text-align: right;
+	left:350px;
+	top: -400px;
+	width: 350px;
+	min-height: 400px;
+	margin-bottom: -400px;
+	cursor: pointer;
+}
+
+#boxl {
+	position: relative;
+	top: -400px;
+	width: 350px;
+	min-height: 400px;
+	margin-bottom: -400px;
+	cursor: pointer;
+}
+
+#boxrs {
+	position: relative;
+	text-align: right;
+	left:350px;
+	top: -700px;
+	width: 350px;
+	min-height: 700px;
+	margin-bottom: -700px;
+	cursor: pointer;
+}
+
+#boxls {
+	position: relative;
+	top: -700px;
+	width: 350px;
+	min-height: 700px;
+	margin-bottom: -700px;
+	cursor: pointer;
+}
+
+.commentPostBox {
+	background: #EDEDED;
+	min-height: 65px;
+	width: 70%;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-bottom: 2px #CCCCCC solid;
+	border-right: 2px #CCCCCC solid;
+}
+
+.commentBox {
+	background: #EDEDED;
+	min-height: 42px;
+	width: 70%;
+	padding: 5px;
+	margin-bottom: 15px;
+	border-bottom: 2px #CCCCCC solid;
+	border-right: 2px #CCCCCC solid;
+}
+
+.btitle {
+	background-color: #5772AB;
+	color: #FFFFFF;
+	padding: 5px;
+	font-size: 10px;
+	height: 30px;
+}
+
+.brow {
+	background-color: #EEEEEE;
+	color: #000000;
+	padding: 7px;
+	height: 30px;
+}
+
+.bdesc {
+	font-size: 10px;
+	color: #555555;
+}
+
+.brow2 {
+	background-color: #DDDDDD;
+	color: #000000;
+	padding: 7px;
+	height: 30px;
+}
+
+.brow3 {
+	background-color: #CCCCCC;
+	color: #000000;
+	padding: 5px;
+	height: 20px;
+}
+
+.brow4 {
+	color: #000000;
+	padding: 7px;
+	vertical-align: top;
+	width: 80%;
+	text-align: justify;
+}
+
+.inputBig {
+	border: 1px #888888 solid;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	padding: 2px;
+	font-family: Verdana, Arial, "Trebuchet MS";
+}
+
+.ptab {
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 13px;
+	background-color: #5772AB;
+	padding: 3px;
+	color: #FFFFFF;
+	margin-right: 10px;
+	width: 125px;
+}
+.pline {
+	border-bottom: 3px #3B5998 solid;
+}

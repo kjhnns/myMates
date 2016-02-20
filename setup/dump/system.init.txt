@@ -1,0 +1,81 @@
+<?php
+/*
+ * Created on Nov 6, 2009
+ *
+ * (c) by vanja k. | zigeuner51@gmail.com
+ */
+
+/*
+ * DEBUG MODUS
+ */
+define("DEBUGSETTINGS",					false);
+
+/*
+ * TIME CONSTANTS
+ */
+define("MINUTE",						60);
+define("HOUR",							MINUTE*60);
+define("DAY",							HOUR*24);
+define("WEEK",							DAY*7);
+define("MONTH",							DAY*31);
+define("YEAR",							DAY*365);
+
+/*
+ * SCRIPT VARS
+ */
+define("REQUIREDPHPVERSIONNUM",			 500);
+define("LOGIN_SUCCESS",               	 1);
+define("LOGIN_CKSUCCESS",              	 2);
+define("LOGIN_FAILED",                 	 3);
+define("CLOG_PUBLIC",					 0);
+define("CLOG_AVATAR",					 "changeAvatar");
+define("CLOG_PM",						 "newPm");
+define("CLOG_BDAY",						 "bday");
+define("CLOG_STATUS",					 "clogstatus");
+define("CLOG_LINK",						 "cloglink");
+define("CLOG_COMMENT",					 "clogcomm");
+define("CLOG_INFOS",					 "infos");
+define("CLOG_THREAD",					 "thread");
+define("CLOG_GALLERY",					 "cloggal");
+define("CLOG_POST",						 "post");
+define("CLOG_PROFILE",					 "profile");
+define("CLOG_QUOTE",					 "quote");
+define("CLOG_FAVS",						 "favs");
+define("USER_CHANGE_AVATAR",			 "AVATAR");
+define("USER_CHANGE_STATUS",			 "STATUS");
+define("USER_CHANGE_INFOS",			 	"INFOS");
+define("USER_CHANGE_FAVS",			 	"FAVS");
+define("CACHE_MEMCACHE",				 1);
+define("CACHE_MYMATES",					 2);
+define("DBUG_FATAL",					"FATALERROR");
+define("DBUG_ERROR",					"ERROR");
+define("DBUG_WARNING",					"WARNING");
+define("DBUG_INFO",						"INFO");
+define("NOTIFY_GALLERY",				"gallery");
+define("NOTIFY_QUOTE",					"quote");
+define("NOTIFY_THREAD",					"thread");
+define("NOTIFY_POST",					"post");
+define("NOTIFY_PROFILE",				"profile");
+define("languageFileParts",				"page;macc;changelog;pm;nav;userEdit;gal;mail;misc;board;profile;rss;mod");
+$_notify_level =						array(
+ 											NOTIFY_GALLERY => 		2,
+ 											NOTIFY_QUOTE => 		4,
+ 											NOTIFY_THREAD =>		8,
+ 											NOTIFY_POST =>			16,
+ 											NOTIFY_PROFILE =>		32
+ 											 );
+
+/*
+ * SECURITY AND SETTINGS
+ */
+define("COMPILE_CHECK",					FALSE); 								// Kann die Performance erhhen wenn false da die Templates nicht mehr gendert werden
+define("UNKWN",							"unknown");							// fuer den Debugger modus
+define("CREATE_LOG_FILES",				FALSE);
+define("RANDUNIQUESTRING",				"%s");
+define("CRYPTSTRING",					RANDUNIQUESTRING);							// Diese Funktion kann bei greren Benutzeraufrufen den Server zustzlich belasten aber auch gleichzeitig zur Fehlerbeseitigung beitragen.
+define("PASSWORDUNIQUESTRING",			RANDUNIQUESTRING);
+define("LOGINCOOKIELIFETIME",			intval(time()+YEAR*2));
+define("COPYRIGHT",						"&copy; by zigeuner51@gmail.com");	// Copyright DONT REMOVE!!!
+define("CACHE_OPTION",					CACHE_MYMATES);						// Optional CACHE_MEMCACHE
+
+?>
