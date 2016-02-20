@@ -5,7 +5,6 @@
  * (c) by Johannes Klumpe | joh.klumpe@gmail.com
  */
 include("./lib/init.php");
-$parser = _new("parser");
 
 function dataSize($total) {
 	$dataSizes = array("Byte","KiB","MB","GB","TB");
@@ -46,6 +45,10 @@ if($_GET['action'] == 'index') {
 	$r = $db->fetch_assoc();
 	$galleries = $r['data'];
 
+	$db->saveQry("SELECT COUNT(*) as `data` FROM `#_gallery_pics`");
+	$r = $db->fetch_assoc();
+	$pics = $r['data'];
+
 	$parser->assign("size",dataSize($total));
 	$parser->assign("rows",$rows);
 	$parser->assign("thumbs",dataSize($thumbs));
@@ -53,13 +56,17 @@ if($_GET['action'] == 'index') {
 	$parser->assign("tmp",dataSize($tmp));
 	$parser->assign("gsize",dataSize($gallery));
 	$parser->assign("galleries",$galleries);
+	$parser->assign("pics",$pics);
 	$parser->setContent("ls/index.tpl");
 }
 
 if($_GET['action'] == 'ccache') {
 	$tmp = _new("cache");
 	$tmp->clean(true);
-	$parser->setContent("ls/ccache.tpl");
+
+	$parser->assign("title",lang("delcachetitle","mod"));
+	$parser->assign("text",lang("delcachetext","mod"));
+	$parser->setContent("ls/success.tpl");
 }
 
 

@@ -1,4 +1,4 @@
-<h1><img src="{$_tpl}misc/members.png" border=0 alt=""/> Mitglieder</h1>
+<h1><img src="{$_tpl}misc/members.png" border=0 alt=""/> {lng k='user'}</h1>
 <div class="box"><center>
 <table cellpadding="2" cellspacing="1" border="0">
 <tr>

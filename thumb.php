@@ -14,6 +14,7 @@
  if($url != "") {
 	 // creating thumbnail
 	 $thumb = thumb($url,(int)$_GET['x'],(int)$_GET['y']);
+	 if(!$thumb) die("failed");
 	 // reading size
 	 $size = getimagesize($thumb);
 
@@ -23,6 +24,6 @@
 
 	 fpassthru($fp);
  } else {
- 	die("error");
+ 	die("No url given");
  }
 ?>

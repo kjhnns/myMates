@@ -7,30 +7,65 @@ body {
 	text-align: justify;
 }
 
+#pg_center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+}
+
+
+#box_area {
+	width: 420px;
+	height: 130px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+	background-color: #EEE;
+	position: static;
+	border: 1px #AAA solid;
+	color: #333;
+	padding: 10px;
+}
+
 #pg_header {
 	background-color: #3B5998;
 	height: 50px;
 	font-size: 25pt;
 	color: #FFFFFF;
-	padding: 10px;
+	padding: 20px;
+	padding-top: 30px;
 	padding-left: 40px;
-	-moz-border-radius:	0px 20px 0px 0px;
 }
 
 #pg_nav {
 	background-color: #DEDEDE;
 	float:left;
 	height: 500px;
-	width: 200px;
-	padding: 10px;
+	width: 220px;
 	font-family: Verdana;
-	font-size: 12pt;
-	-moz-border-radius: 0px 0px 30px 30px;
+	font-size: 11pt;
+	border-right: 1px #AAA solid;
+	border-bottom: 1px #AAA solid;
+	border-radius: 0px 0px 30px 0px;
+	-moz-border-radius: 0px 0px 30px 0px;
+}
+
+#pg_navItems {
+	margin-top: 15px;
+	margin-left: -10px;
+}
+
+#pg_navItems li {
+	padding-bottom: 5px;
 }
 
 #pg_subhead {
 	background-color: #5772AB;
 	height:25px;
+	border-radius: 0px 0px 20px 0px;
 	-moz-border-radius:	0px 0px 20px 0px;
 }
 

@@ -21,7 +21,7 @@ function wrapper() {
 <h1><img src="{$_tpl}misc/gallery.png" border="0" alt="" /> <a href="./gallery.php?action=view&amp;gid={$smarty.get.gid}" style="text-decoration:none; color: #FFFFFF;">{$gal.title}</a></h1>
 <div style="padding-left: 25px;">
 	<div style="min-height:400px; width: 700px; text-align:center;">
-		<img src="./thumb.php?url={$pic.title}&amp;x=700&amp;y=400" />
+		<img class="roundPic" src="./thumb.php?url={$pic.title}&amp;x=700&amp;y=400" />
 	</div>
 	<div id="boxl" onclick="location.href='gallery.php?action=comments&id={$ppic.ID}&gid={$smarty.get.gid}'" onmouseover="show(2,1)" onmouseout="show(2,0)">
 		<img id="ppic" src="{$_tpl}misc/lightbox/prev.gif" style="margin-top: 40px; display:none;" border="0" />

@@ -89,7 +89,7 @@
 	float: left;
 	margin: 0px;
 	padding: 10px;
-	border: 1px #000000 solid;
+	border: 1px #AAA solid;
 	border-bottom: 0px;
 	position: static;
 	border-top: 0px;
@@ -106,8 +106,8 @@
 	padding: 0px;
 	padding-left: 7px;
 	padding-right: 7px;
-	border-bottom: 1px #000000 solid;
-	border-right: 1px #000000 solid;
+	border-bottom: 1px #AAA solid;
+	border-right: 1px #AAA solid;
 	position: static;
 	overflow: hidden;
 	background-color: #EEEEEE;
@@ -120,9 +120,11 @@
 	margin: 0px;
 	padding: 0px;
 	position: static;
-	border-right: 1px #000000 solid;
-	border-bottom: 1px #000000 solid;
+	border-right: 1px #AAA solid;
+	border-bottom: 1px #AAA solid;
 	background-color: #EEEEEE;
+	border-radius: 0px 0px 30px 0px;
+	-moz-border-radius: 0px 0px 30px 0px;
 }
 
 #pg_rightbar {
@@ -137,7 +139,7 @@
 #pg_bottom {
 	height: 22px;
 	width: 767px;
-	border: 1px #000000 solid;
+	border: 1px #AAA solid;
 	float: left;
 	padding:0px;
 	margin: 0px;
@@ -145,4 +147,6 @@
 	background-color: #EEEEEE;
 	text-align: center;
 	overflow: hidden;
+	border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
 }

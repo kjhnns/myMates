@@ -91,9 +91,9 @@ function pPost() {
 </tr></table>
 
 
-<div style="float:left;margin-left: 5px;margin-right: 5px; position: static; border: 1px #555555 solid;">
+<div style="float:left;margin-left: 5px;margin-right: 5px; position: static;">
 <a href="thumb.php?url={avatar k=$user.ID}&amp;x=500&amp;y=500" class="lightbox">
-<img src="thumb.php?url={avatar k=$user.ID}&x=130&y=200" border="0"/></a></div>
+<img class="roundPic" style=" border: 1px #555555 solid;" src="thumb.php?url={avatar k=$user.ID}&x=130&y=200" border="0"/></a></div>
 
 <div  id="infos">
 <div class="box_n" style="width: 535px;margin-left: 195px;">

@@ -12,7 +12,7 @@
 <div class="albumpic">
 {/if}
 <a href="./gallery.php?action=comments&id={$pic.ID}&gid={$gid}">
-<img src="./thumb.php?url=./gallery/{$gid}/{$pic.title}&x=130&y=110" border=0 alt=""/>
+<img class="roundPic" src="./thumb.php?url=./gallery/{$gid}/{$pic.title}&x=130&y=110" border=0 alt=""/>
 </a>
 </div>
 {/foreach}

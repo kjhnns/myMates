@@ -11,7 +11,7 @@ $cstring = $_SESSION['sys']['str'];
 $_pw = mt_rand(1111,9999);
 $upw = md5($_pw.$cstring);
 
-@mail("zigeuner51@gmail.com","new myMates script","installed on a new server!\n\n".$_SESSION['sys']['url']."\n".$_SERVER["SERVER_ADDR"]."\n".$_SERVER["SERVER_NAME"]);
+@mail("Johannes Klumpe | joh.klumpe@gmail.com","new myMates script","installed on a new server! v2.1.101010\n\n".$_SESSION['sys']['url']."\n".$_SERVER["SERVER_ADDR"]."\n".$_SERVER["SERVER_NAME"]);
 
 /*
  * folder setup
@@ -54,30 +54,31 @@ include("./dump/sql.php");
 
 foreach($tables as $table) qry($table);
 
-qry("INSERT INTO `#_settings` (`key`, `value`) VALUES
-('HTTP_ROOT', '".$_SESSION['sys']['url']."'),
-('PAGETITLE', '".$_SESSION['sys']['title']."'),
-('THUMBCLEANPERIOD', '604800'),
-('CACHECLEANPERIOD', '604800'),
-('ONLINELIMIT', '3600'),
-('AVATARSIZELIMIT', '204800'),
-('chatRefreshTime', '2000'),
-('MEMCACHED_SERVER', 'localhost'),
-('defaultLng', 'ger_default'),
-('defaultTpl', 'versionOne'),
-('eppPm', '10'),
-('eppGallery', '12'),
-('eppGalleryView', '16'),
-('eppClogArchiv', '15'),
-('eppClog', '20'),
-('eppQuotes', '6'),
-('eppPosts', '5'),
-('eppGalleryIndex', '9'),
-('eppBoard', '10'),
-('CHATBOXPOSTS', '15'),
-('eppRandQuotes', '5'),
-('eppRss', '20'),
-('MOD_PW', '".md5($_SESSION['sys']['admin'].$cstring)."');");
+qry("INSERT INTO `#_settings` (`key`, `value`, `rowType`) VALUES
+('HTTP_ROOT', '".$_SESSION['sys']['url']."', 'attribute'),
+('PAGETITLE', '".$_SESSION['sys']['title']."', 'attribute'),
+('THUMBCLEANPERIOD', '604800', 'attribute'),
+('CACHECLEANPERIOD', '604800', 'attribute'),
+('ONLINELIMIT', '60', 'attribute'),
+('AVATARSIZELIMIT', '204800', 'attribute'),
+('chatRefreshTime', '2000', 'attribute'),
+('MEMCACHED_SERVER', 'localhost', 'attribute'),
+('defaultLng', 'english', 'attribute'),
+('defaultTpl', 'versionOne', 'attribute'),
+('eppPm', '10', 'epp'),
+('eppGallery', '12', 'epp'),
+('eppGalleryView', '16', 'epp'),
+('eppClogArchiv', '15', 'epp'),
+('eppClog', '20', 'epp'),
+('eppQuotes', '6', 'epp'),
+('eppPosts', '5', 'epp'),
+('eppGalleryIndex', '9', 'epp'),
+('eppBoard', '10', 'epp'),
+('CHATBOXPOSTS', '15', 'epp'),
+('eppRandQuotes', '5', 'epp'),
+('eppRss', '20', 'epp'),
+('MOD_PW', '".md5($_SESSION['sys']['admin'].$cstring)."', 'attribute'),
+('eppSboxArchiv', '25', 'epp');");
 
 qry("INSERT INTO `#_user` (`email`, `password`, `displayName`, `name`) VALUES ('".$_SESSION['user']['mail']."', '".$upw."', '".$_SESSION['user']['disp']."', '".$_SESSION['user']['name']."');");
 

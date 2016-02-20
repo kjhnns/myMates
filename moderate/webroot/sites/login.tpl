@@ -12,12 +12,13 @@
 	<script type="text/javascript" src="{$_lib}jquery.lightbox-0.5.min.js"></script>
 </head>
 <body>
-<div id="pg_header">myMates v.2 - Administration</div>
-<div id="pg_nav">Login</div>
+<div id="pg_header">myMates v.2 - {lng k="moderate"}</div>
+<div id="pg_nav" style="padding: 10px;">{lng k="login" d="page"}</div>
 <div id="pg_subhead"></div>
 <div id="pg_content">
 <form action="#" method="post">
 <input type="password" name="moderatePass">
+<input type="submit" value="{lng k="submit" d="page"}" />
 </form>
 </div>
 

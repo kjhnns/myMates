@@ -1,5 +1,5 @@
 {if $_dynNav != false}
-<div id="dynTitle">{lng k='options'} | <a style="color: #FFFFFF; font-weight: normal;" href="javascript:switchDynNav()">{lng k="online"} ({$_usersOnline})</a></div>
+<div id="dynTitle">{lng k='options'} | <a style="color: #FFFFFF; font-weight: normal;" href="javascript:switchDynNav()">{lng k="online"} (<span id="oUser">{$_usersOnline}</span>)</a></div>
 <div id="dynNavBox">
 	{foreach key=dtitle item=durl from=$_dynNav}
 	{if $durl|strstr:'fullimage'}
@@ -16,7 +16,7 @@
 {/if}
 
 {if $_dynNav != false}<div id="onlineBox" style="display: none;">{/if}
-{if $_dynNav == false}<div id="dynTitle">{lng k="online"} ({$_usersOnline})</div>{/if}
+{if $_dynNav == false}<div id="dynTitle">{lng k="online"} (<span id="oUser">{$_usersOnline}</span>)</div>{/if}
 
 	{foreach key=user item=status from=$_onlineList}
 	<div class="nItem">

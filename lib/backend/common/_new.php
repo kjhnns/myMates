@@ -25,8 +25,6 @@
 				include(BACKEND.$class.".class.php");
 			else
 				return false;
-
-			$key = md5(serialize($args));
 		}
 
 		for($i = 1; $i< count($args);$i++) $_args[] .= "\$args['".$i."']";
@@ -38,7 +36,7 @@
 
 		$res = "";
 		eval("\$res = new ".$class.$__args.";");
-	debuglog("neue Klasse","Neue Klasse initiert:".$class);
+		debuglog("neue Klasse","Neue Klasse initiert:".$class);
 		$__classes[$class] = $res;
 	}
 	return $res;

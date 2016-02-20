@@ -1,2 +1,1 @@
-<h1>error</h1>
-missing content
+{lng k="noContent" d="page"}

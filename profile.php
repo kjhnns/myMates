@@ -55,7 +55,7 @@ if($_GET['action'] == 'index') {
 
 if($_GET['action'] == 'members') {
 	$cache = _new("cache");
-	$users = $cache->get("userInfo");
+	$users = $cache->get("userInfo/del");
 	$parser->assign("users", $users);
 	$parser->setContent("ls/members.tpl");
 }

@@ -15,6 +15,7 @@ if(!(isset($_GET['action']) && $_GET['action'] != "")) {
 if($_GET['action'] == 'index') {
 	$parser->assign("delresult","0");
 	$parser->setNav(lang("changelogArchive"),  "index.php?action=archive");
+	$parser->setNav(lang("chatArchive"),  "index.php?action=chatarchive");
 	$parser->setNav(lang("myProfil"),  "profile.php?uid=".UID);
 	$parser->setNav(lang("myAcc","nav"),  "myAccount.php");
 	$parser->setContent("ls/index.tpl");
@@ -55,13 +56,11 @@ if($_GET['action'] == 'archive') {
 	}
 	$start = ($epp * $page)-$epp;
 
-	$db = _new("db");
-	$db->saveQry("SELECT * FROM `#_changelog` WHERE `visible` = '0' OR `visible` = ? ORDER BY `time` DESC LIMIT ".$start.",".$epp, UID);
-	while($row = $db->fetch_assoc()) {
-		$res[$row['ID']] = clogRowParser($row);;
-	}
-	$db->free();
 
+	$cl = _new("changelog");
+	$res = $cl->read($epp,$start);
+
+	$db = _new("db");
 	$db->saveQry("SELECT COUNT(*) as `datasets` FROM `#_changelog` WHERE `visible` = '0' OR `visible` = ?",UID);
 	$count = $db->fetch_assoc(); $db->free();
 
@@ -71,6 +70,10 @@ if($_GET['action'] == 'archive') {
 	$parser->assign("p_cou", $count['datasets']);
 
 	$parser->assign("log", $res);
+	$parser->setNav(lang("changelogArchive"),  "index.php?action=archive");
+	$parser->setNav(lang("chatArchive"),  "index.php?action=chatarchive");
+	$parser->setNav(lang("myProfil"),  "profile.php?uid=".UID);
+	$parser->setNav(lang("myAcc","nav"),  "myAccount.php");
 	$parser->setContent("ls/index.clog.tpl");
 	$parser->display("index.tpl");
 }
@@ -82,5 +85,44 @@ if($_GET['action'] == 'changeTemplate') {
 		else
 		$sess->changeTemplate();
 	$parser->display("sites/template.tpl");
+}
+
+if($_GET['action'] == 'chatarchive') {
+	$page = 1; $epp = eppSboxArchiv;
+	if(isset($_GET['page'])) {
+		$page = (int)$_GET['page'];
+	}
+	$start = ($epp * $page)-$epp;
+
+	$db = _new("db");
+	$db->saveQry("SELECT * FROM `#_sbox` ORDER BY `ID` DESC LIMIT ".$start.",".$epp);
+	while($row = $db->fetch_assoc()) {
+		$res[] = $row;
+	}
+
+	$db->saveQry("SELECT COUNT(*) as `datasets` FROM `#_sbox`");
+	$count = $db->fetch_assoc(); $db->free();
+
+	$parser->assign("p_act", $page);
+	$parser->assign("p_epp", $epp);
+	$parser->assign("p_url","./index.php?action=chatarchive");
+	$parser->assign("p_cou", $count['datasets']);
+
+	$parser->assign("res", $res);
+	$parser->setNav(lang("changelogArchive"),  "index.php?action=archive");
+	$parser->setNav(lang("chatArchive"),  "index.php?action=chatarchive");
+	$parser->setNav(lang("myProfil"),  "profile.php?uid=".UID);
+	$parser->setNav(lang("myAcc","nav"),  "myAccount.php");
+	$parser->setContent("ls/index.chat.tpl");
+	$parser->display("index.tpl");
+}
+
+if($_GET['action'] == 'changeLang') {
+	$sess = _new("session");
+		if($_GET['lang'] != "")
+		$sess->changeLang($_GET['lang']);
+		else
+		$sess->changeLang();
+	$parser->display("sites/lang.tpl");
 }
 ?>

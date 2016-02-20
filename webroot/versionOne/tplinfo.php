@@ -1,7 +1,10 @@
 <?php
 // TEMPLATE CONFIGURATION FILE
 $_tplCFG['title'] = 					"Version One";
-$_tplCFG['author'] = 					"Joh K.";
+$_tplCFG['version'] = 					"2.1";
+$_tplCFG['author'] = 					"Zigeuner51";
+$_tplCFG['preview'] = 					"./preview.png";
+$_tplCFG['selectroot'] = 				"versionOne";
 $_tplCFG['root'] = 						"versionOne/";
 $_tplCFG['compiledFolder'] =			"cache/";
 $_tplCFG['commentsDefault'] =			"misc/comments.tpl";
@@ -14,5 +17,7 @@ $_tplCFG['datentimeformat'] =			"d.m.Y - H:i";
 $_tplCFG['chatboxrow'] = 				"<a href=\"profile.php?uid=%d\" class=\"userLink\">%s</a>: %s<br/>";
 $_tplCFG['chatboxrownew'] = 			"<script>chatBing()</script>" .
 										"<b>%s</b>%s";
+$_tplCFG['chatboxonlineuser'] =			"<script>ebi('oUser').innerHTML = \"%s\";onlineUser=\"%s\";</script>%s";
+
 
 ?>

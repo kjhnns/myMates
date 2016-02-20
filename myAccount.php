@@ -12,6 +12,12 @@ if(!(isset($_GET['action']) && $_GET['action'] != "")) {
 	$_GET['action'] = "index";
 }
 
+
+$parser->setNav(lang("changelogArchive"),  "index.php?action=archive");
+$parser->setNav(lang("chatArchive"),  "index.php?action=chatarchive");
+$parser->setNav(lang("myProfil"),  "profile.php?uid=".UID);
+$parser->setNav(lang("myAcc","nav"),  "myAccount.php");
+
 if($_GET['action'] == 'index') {
 	$parser->setContent("ls/myAccount.tpl");
 }
@@ -99,6 +105,44 @@ if($_GET['action'] == 'editLogin') {
 		$parser->setContent("ls/macc.login.tpl");
  	}
 }
+
+if($_GET['action'] == 'selectLang') {
+	$dir = _scandir(LANGUAGES);
+	foreach($dir as $file) {
+		$fp = @fopen(LANGUAGES.$file, 'r');
+		while($ln = fgets($fp)) {
+			if(substr($ln, 0, strlen('// ##languageFile##')) == '// ##languageFile##')	{
+				list(,, $langs[basename ($file,".lang.php")]['title'],
+						$langs[basename ($file,".lang.php")]['author'],,,
+						$langs[basename ($file,".lang.php")]['version']) = explode('##', trim($ln));
+				list($a,$b) = explode(".",$langs[basename ($file,".lang.php")]['version']);
+ 				$versionCompareVal= $a.$b;
+				$langs[basename ($file,".lang.php")]['version'] = (VERSION_NUMERIC > $versionCompareVal?false:true);
+				$langs[basename ($file,".lang.php")]['file'] = basename ($file,".lang.php");
+				break;
+			}
+		}
+		fclose($fp);
+	}
+	$parser->assign("langs",$langs);
+	$parser->setContent("ls/macc.selectLang.tpl");
+}
+
+
+if($_GET['action'] == 'selectTpl') {
+	$dir = _scandir(WEBROOT,true);
+	foreach($dir as $tpl) {
+		unset($_tplCFG);
+		include(WEBROOT.$tpl."/tplinfo.php");
+		$tpls[$tpl] = $_tplCFG;
+		list($a,$b) = explode(".",$tpls[$tpl]['version']);
+ 		$versionCompareVal= $a.$b;
+		$tpls[$tpl]['version'] = (VERSION_NUMERIC > $versionCompareVal?false:true);
+	}
+	$parser->assign("tpls",$tpls);
+	$parser->setContent("ls/macc.selectTpl.tpl");
+}
+
 
 if($_GET['action'] == 'editFavs') {
  	if(isset($_GET['edit']) && $_GET['edit'] == 'true') {

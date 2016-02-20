@@ -13,9 +13,18 @@
 	<script type="text/javascript" src="{$_lib}jquery.lightbox-0.5.min.js"></script>
 </head>
 <body>
-<div id="pg_header">myMates v.2 - Administration</div>
-<div id="pg_nav"><a href="./index.php">Index</a><br><a href="./user.php">users</a>
-<br><a href="./logout.php">logout</a></div>
+<div id="pg_header">myMates v.2 - {lng k="moderate"}</div>
+<div id="pg_nav">
+	<ul id="pg_navItems">
+		<li><a href="./index.php">{lng k="nstart"}</a></li>
+		<li><a href="./user.php">{lng k="nuser"}</a></li>
+		<li><a href="./settings.php">{lng k="nsettings"}</a></li>
+		<li><a href="./board.php">{lng k="nboard"}</a></li>
+
+		<li style="padding-top: 80px;"><a href="./logout.php">{lng k="logout"}</a></li>
+		<li><a href="../">{lng k="npage"}</a></li>
+	</ul>
+</div>
 <div id="pg_subhead"></div>
 <div id="pg_content">
 {if $_includeContent != ""}
@@ -24,8 +33,5 @@
 	{include file="ls/noContent.tpl"}
 {/if}
 </div>
-
-
-
 </body>
 </html>

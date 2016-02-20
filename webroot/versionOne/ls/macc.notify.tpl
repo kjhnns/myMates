@@ -3,9 +3,7 @@
 <div class="box_n">
 	<div class="box_info" id="InfoBox" style="min-height: 5px;">
 	<img src="{$_tpl}misc/delete.png" id="cl"  />
-	Benachrichtigungen erhalten Sie in Form von E-Mails die bei Ihrer angegebenen E-Mail Adresse eintreffen,
-	sobald sich in den ausgewaehlten Bereichen Neuigkeiten ergeben.<br/><br/>Waehlen Sie hier nun die Bereiche in denen
-	Sie eine solche E-Mail Benachrichtigung wuenschen.
+	{lng k='notifyInfo' d='macc'}
 	</div>
 
 <table cellpadding=2 cellspacing=0 border=0 style="width: 80%;margin-left: 10%;">

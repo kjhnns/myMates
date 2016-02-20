@@ -1,5 +1,5 @@
 {if $_content == ""}
-error
+{lng k='noContent'}
 {else}
 {$_content}
 {/if}

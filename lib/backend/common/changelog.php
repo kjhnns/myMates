@@ -72,40 +72,57 @@ function clogRowParser($row) {
 
 		// youtube
 		if(detectYoutube($row['value'])) {
-			$ch = curl_init();
+			$c = _new("cache");
+			if(!$res = $c->get("clog_youtube_".$row['value'])) {
+				$ch = curl_init();
 
-			curl_setopt($ch, CURLOPT_URL, $row['value']);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($ch, CURLOPT_URL, $row['value']);
+				curl_setopt($ch, CURLOPT_HEADER, 0);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-			$out = curl_exec($ch);
-			curl_close($ch);
+				$out = curl_exec($ch);
+				curl_close($ch);
 
-			preg_match('/<meta name="title" content="(.*)"/i',$out,$match);
-			$row['title'] = html(utf8_decode($match[1]));
+				preg_match('/<meta name="title" content="(.*)"/i',$out,$match);
+				$res['title'] = html(utf8_decode($match[1]));
 
 
-			preg_match('/<meta name="description" content="(.*)"/i',$out,$match);
-			$row['desc'] = html(utf8_decode($match[1]));
-			$row['value'] = parseYoutubeID($row['value']);
-			$row['key'] = 'youtube';
+				preg_match('/<meta name="description" content="(.*)"/i',$out,$match);
+				$res['desc'] = $match[1];
+				$res['value'] = parseYoutubeID($row['value']);
+				$res['key'] = 'youtube';
+				$c->set("clog_youtube_".$row['value'],$res,time()+YEAR);
+			}
+
+			$row['desc'] = $res['desc'];
+			$row['value'] = $res['value'];
+			$row['key'] = $res['key'];
+			$row['title'] = $res['title'];
+
 		}
 
 		if(detectHtml($row['value'])) {
-			$ch = curl_init();
+			$c = _new("cache");
+			if(!$res = $c->get("clog_html_".$row['value'])) {
+				$ch = curl_init();
 
-			curl_setopt($ch, CURLOPT_URL, $row['value']);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($ch, CURLOPT_URL, $row['value']);
+				curl_setopt($ch, CURLOPT_HEADER, 0);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-			$out = curl_exec($ch);
-			curl_close($ch);
+				$out = curl_exec($ch);
+				curl_close($ch);
 
-			preg_match("/<title>(.*)<\/title>/i",$out,$match);
-			$row['title'] = html(utf8_decode($match[1]));
-			preg_match('/<meta name="description" content="(.*)"/i',$out,$match);
-			if($match[1] != "")
-			$row['desc'] = html(utf8_decode($match[1]));
+				preg_match("/<title>(.*)<\/title>/i",$out,$match);
+				$res['title'] = html(utf8_decode($match[1]));
+				preg_match('/<meta name="description" content="(.*)"/i',$out,$match);
+				if($match[1] != "")
+				$res['desc'] = html(utf8_decode($match[1]));
+				$c->set("clog_html_".$row['value'],$res,time()+YEAR);
+			}
+
+			$row['desc'] = $res['desc'];
+			$row['title'] = $res['title'];
 		}
 
 		//imgs
@@ -151,6 +168,8 @@ function detectYoutube($url) {
  * @param str url
  */
 function detectHtml($url) {
+	$c = _new("cache");
+	if($res = $c->get("clog_html_".$url)) return true;
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, $url);
@@ -183,27 +202,14 @@ function parseYoutubeID($url) {
 
 /**
  * detects whether the url leads to an image
- * some kind of critical shit function
  *
  * @param str url
  * return boolean
  */
 function detectImage($url) {
-	/*
-	 * das hier macht die ganze kacke richtig langsam garantiert aber das es ein bild ist
-	if(@getimagesize($url) === FALSE) {
-		return false;
-	} else {
-		return true;
-	}
-	*/
-	/*$end = substr($url,-4,4);
-	if(	$end == '.jpg' || $end == '.gif' || $end == '.png' ||
-		$end == '.jpeg' || $end == '.JPG' || $end == '.GIF' || $end == '.PNG') {
-		return true;
-	} else {
-		return false;
-	}*/
+	$c = _new("cache");
+	if($res = $c->get("clog_image_".$url))
+	if($res == 'true') return true; else return false;
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL, $url);
@@ -216,7 +222,13 @@ function detectImage($url) {
 	$out = explode("\n",$out);
 	foreach($out as $ln)
 	if(substr($ln,0,strlen("Content-Type: ")) == "Content-Type: ") {
-	if(strstr($ln,"image")) return true; else return false;
+		if(strstr($ln,"image")) {
+			$c->set("clog_image_".$url,"true",time()+YEAR);
+			return true;
+		} else {
+			$c->set("clog_image_".$url,"false",time()+YEAR);
+			return false;
+		}
 	break; }
 
 	return false;

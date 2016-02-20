@@ -32,13 +32,13 @@
   * DEFINITION OF DB HANDLER
   */
  class db {
- 	var $conn = false;
+ 	private $conn = false;
 	var $qryRes = false;
 	var $prefix;
 	var $db;
 	var $fQry = true;
 
-	/*
+	/**
 	 * DB CONSTRUCTOR
 	 *
 	 * @param res [connID]
@@ -65,11 +65,11 @@
 	}
 
 
-	/*
+	/**
 	 * qrys the database
 	 *
 	 * @param str qry
-	 * return qryResult
+	 * @return boolean qryResult
 	 */
 	function _qry($str) {
 		global $_GLOBAL_QRYS;
@@ -89,12 +89,12 @@
 		return $this->qryRes;
 	}
 
-	/*
+	/**
 	 * sends a save qry
 	 * ? replaces parameters
 	 *
 	 * @param str qry
-	 * return qryResult
+	 * @return boolean qryResult
 	 */
 	function saveQry($qry) {
 		$args = func_get_args();
@@ -109,11 +109,11 @@
 		return $this->_qry($_qry);
 	}
 
-	/*
+	/**
 	 * addslashes and escapes the qry
 	 *
 	 * @param str qry
-	 * return str qry
+	 * @return str qry
 	 */
 	function _esc($str) {
 		if(function_exists('mysql_real_escape_string'))
@@ -124,12 +124,12 @@
 			return(addslashes($str));
 	}
 
-	/*
+	/**
 	 * selects field from qry
 	 *
 	 * @param str qry
 	 * @param str field
-	 * return mixed field
+	 * @return mixed field
 	 */
 	function select($str, $field) {
 		$this->saveQry($str);
@@ -137,7 +137,7 @@
 		return $row[$field];
 	}
 
-	/*
+	/**
 	 * mysql_num_rows
 	 *
 	 * @return int
@@ -151,10 +151,10 @@
 		return $result['datasets'];
 	}
 
-	/*
+	/**
 	 * mysql_fetch_assoc
 	 *
-	 * return array
+	 * @return mixed
 	 */
 	function fetch_assoc() {
         while ($row = mysql_fetch_assoc($this->qryRes)) {
@@ -163,16 +163,16 @@
         }
     }
 
-	/*
+	/**
 	 * mysql_insert_id
 	 *
-	 * return int ID
+	 * @return int ID
 	 */
     function returnID() {
 		return mysql_insert_id($this->conn);
     }
 
-	/*
+	/**
 	 * inserts values into tables
 	 *
 	 * @param str table
@@ -206,7 +206,7 @@
 		return $this->_qry($str);
     }
 
-	/*
+	/**
 	 * updates table row
 	 *
 	 * @param str table
@@ -227,19 +227,19 @@
 		return $this->_qry($str);
    }
 
-	/*
+	/**
 	 * deletes from table where
 	 *
 	 * @param str table
 	 * @param str where
-	 * return result
+	 * @return boolean result
 	 */
    function delete($table, $where) {
 		$str = "DELETE FROM " . $this->prefix . $table . " " . $where . "";
 		return $this->_qry($str);
 	}
 
-	/*
+	/**
 	 * mysql_free_result
 	 */
 	function free() {

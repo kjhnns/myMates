@@ -35,7 +35,7 @@
 .box {
 	margin: 20px;
 	padding: 15px;
-	border: 1px #888888 solid;
+	border: 1px #CCC solid;
 	background-color: #EEEEEE;
 	min-height: 100px;
 	text-align: justify;
@@ -76,6 +76,11 @@ td {
 	text-align: justify;
 	font-family: Verdana, Arial, "Trebuchet MS";
 	font-size: 12px;
+	border: 0px #AAA solid;
+}
+
+table {
+	width: 100%;
 }
 
 a {
@@ -146,5 +151,5 @@ h4 {
 	margin: 5px;
 	margin-left: -5px;
 	margin-top: 0px;
-	border-bottom: 3px #000000 solid;
+	border-bottom: 2px #AAA solid;
 }

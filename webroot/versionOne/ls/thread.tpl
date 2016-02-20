@@ -45,8 +45,8 @@ location.href="./board.php?action=thread&delete="+delID+"&tid="+tid+"&page="+pag
 
 <div class="box_n" style="min-height: 30px;">
 <h2>{$info.title}</h2><br/>
-Beitraege: {$info.posts}<br/>
-Author: {uName id=$info.user}
+{lng k='postsCount' d='board'}: {$info.posts}<br/>
+{lng k='author'}: {uName id=$info.user}
 </div>
 
 {if $info.attends != '0'}
@@ -91,14 +91,16 @@ Author: {uName id=$info.user}
 <td class="brow" style="vertical-align: top;font-size: 10px;">
 <div style="text-align: center;">
 <a class="lightbox" href="./thumb.php?url={avatar k=$row.user}&amp;y=400&amp;x=400">
-<img style="border-right: 1px #AAAAAA solid;border-bottom: 1px #AAAAAA solid;" src="./thumb.php?url={avatar k=$row.user}&amp;x=90&amp;y=90" border="0" alt="Avatar"/></a>
+<img style="border-right: 1px #AAAAAA solid;border-bottom: 1px #AAAAAA solid;" class="roundPic" src="./thumb.php?url={avatar k=$row.user}&amp;x=90&amp;y=90" border="0" alt="Avatar"/></a>
 </div>
 <br/><br/>
 {if $row.user==$info.user}{lng k='threadauthor' d='board'}{/if}<br/>
-<div style="margin-bottom: 2px;">Beitraege: {uposts id=$row.user}</div>
-<a href="./board.php?action=post&do=post&tid={$smarty.get.tid}&quote={$row.ID}" title="zitieren"><img src="{$_tpl}misc/bquote.png" border=0 /></a>
-<a href="./board.php?action=post&do=edit&pid={$row.ID}&tid={$smarty.get.tid}" title="bearbeiten"><img src="{$_tpl}misc/bedit.png" border=0 /></a>
-<a href="#" onclick="bdel({$row.ID})" title="loeschen"><img src="{$_tpl}misc/bdel.png" border=0 /></a>
+<div style="margin-bottom: 2px;">{lng k='postsCount' d='board'}: {uposts id=$row.user}</div>
+<a href="./board.php?action=post&do=post&tid={$smarty.get.tid}&quote={$row.ID}" title="{lng k='quote'}"><img src="{$_tpl}misc/bquote.png" border=0 /></a>
+{if $row.user==$_uid}
+<a href="./board.php?action=post&do=edit&pid={$row.ID}&tid={$smarty.get.tid}" title="{lng k='edit'}"><img src="{$_tpl}misc/bedit.png" border=0 /></a>
+<a href="#" onclick="bdel({$row.ID})" title="{lng k='delete'}"><img src="{$_tpl}misc/bdel.png" border=0 /></a>
+{/if}
 </td>
 <td class="brow4">{$row.text|nl2br}{uSignature id=$row.user divide="<hr>"}</td>
 </tr>

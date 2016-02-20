@@ -138,8 +138,10 @@ if(!PICFASTRENDER) {
 define("MOD_LOGIN", $_SESSION['moderate'] == MOD_PW);
 if(!MOD_LOGIN || $_POST['moderatePass']) {
 	if(md5($_POST['moderatePass'].PASSWORDUNIQUESTRING) == MOD_PW) {
-		echo "Erfolg!";
 		$_SESSION['moderate'] = MOD_PW;
+		$parser = _new("parser");
+		$parser->display("sites/logged.tpl");
+		exit;
 	} else {
 		$parser = _new("parser");
 		$parser->display("sites/login.tpl");
@@ -148,6 +150,7 @@ if(!MOD_LOGIN || $_POST['moderatePass']) {
 }
 
 
+$parser = _new("parser");
 setTitle(lang("moderate","mod"));
 define("InitBench",_microTime() - BENCHSTART);
 debugLog("Initialisierung beendet", "Enviroment wurde initialisiert");

@@ -16,11 +16,11 @@ function switchDynNav() {
 	var nBox = ebi("dynNavBox");
 	var tBox = ebi("dynTitle");
 	if(oBox.style.display == "none") {
-		tBox.innerHTML = "<a style=\"color: #FFFFFF; font-weight: normal;\" href=\"javascript:switchDynNav()\">"+lng_options+"</a> | "+lng_online+" ("+onlineUser+")";
+		tBox.innerHTML = "<a style=\"color: #FFFFFF; font-weight: normal;\" href=\"javascript:switchDynNav()\">"+lng_options+"</a> | "+lng_online+" (<span id=\"oUser\">"+onlineUser+"</span>)";
 		nBox.style.display = "none";
 		oBox.style.display = "inline";
 	} else {
-		tBox.innerHTML = lng_options+" | <a style=\"color: #FFFFFF; font-weight: normal;\" href=\"javascript:switchDynNav()\">"+lng_online+" ("+onlineUser+")</a>";
+		tBox.innerHTML = lng_options+" | <a style=\"color: #FFFFFF; font-weight: normal;\" href=\"javascript:switchDynNav()\">"+lng_online+" (<span id=\"oUser\">"+onlineUser+"</span>)</a>";
 		oBox.style.display = "none";
 		nBox.style.display = "inline";
 	}

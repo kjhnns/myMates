@@ -93,8 +93,6 @@ if($_GET['action'] == 'index') {
 		$db->free();
 	}
 	if(!$res) unset($res);
-	$parser->setNav(lang("addboard","board"),  "./board.php?action=board&do=add");
-	$parser->setNav(lang("delboard","board"),  "./board.php?action=board&do=del");
 
 	$parser->assign("res",$res);
 	$parser->setContent("ls/board.tpl");
@@ -253,47 +251,6 @@ if($_GET['action'] == 'threads') {
 	}
 }
 
-if($_GET['action'] == 'board') {
-	if($_GET['do'] == 'post') {
-		$db = _new('db'); $c = _new("cache");
-		$db->insert("boards", array("title","desc"), array($_POST['title'],$_POST['desc']));
-		$c->delete("boards");
-
-		$parser->assign("title", lang("savedBoardTitle","board"));
-		$parser->assign("result", lang("savedBoardText","board"));
-		$parser->assign("back", "board.php");
-		$parser->setContent("ls/success.tpl");
-	} elseif($_GET['do'] == 'add') {
-		$parser->assign("res",false);
-		$parser->setContent("ls/board.add.tpl");
-	} elseif($_GET['do'] == 'del') {
-		$c = _new("cache");
-		$bs = $c->get("boards");
-		foreach($bs as $b) {
-			$as[$b['ID']] = $b['title'];
-		}
-
-		$parser->assign("bs",$as);
-		$parser->assign("res",false);
-		$parser->setContent("ls/board.del.tpl");
-	} elseif($_GET['do'] == 'delete') {
-		$db = _new('db'); $c = _new("cache");
-		$bs = $c->get("boards");
-		$c->delete("boards");
-		$db->delete("boards","WHERE `ID` = '".$_POST['id']."'");
-
-		foreach($bs as $b) {
-			if($_POST['id'] != $b['ID'])
-			$as[$b['ID']] = $b['title'];
-		}
-
-		$parser->assign("bs",$as);
-		$parser->assign("res",true);
-		$parser->setContent("ls/board.del.tpl");
-	}
-
-}
-
 if($_GET['action'] == 'show') {
 	$id=(int)$_GET['bid'];
 	$c = _new("cache");
@@ -314,7 +271,7 @@ if($_GET['action'] == 'show') {
 		$db->free();
 	}
 
-	$res =array_slice($res,$start,$epp);
+	$res = @array_slice($res,$start,$epp);
 
 	$db->saveQry("SELECT COUNT(*) as `datasets` FROM `#_threads` WHERE `board` = ?",$id);
 	$count = $db->fetch_assoc(); $db->free();

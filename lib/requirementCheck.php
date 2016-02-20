@@ -28,5 +28,5 @@
  }
 
  // Checking chmod
- isWriteAbleCheck(array(	SESSIONSAVEPATH,THUMBS,CACHE_DIR,AVATARS,GALLERY	));
+ isWriteAbleCheck(array(	THUMBS,CACHE_DIR,AVATARS,GALLERY	));
 ?>

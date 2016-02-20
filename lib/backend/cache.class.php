@@ -4,25 +4,19 @@
  *
  * (c) by Johannes Klumpe | joh.klumpe@gmail.com
  */
-if(CACHE_OPTION == CACHE_MEMCACHE) {
-	class cache extends cache_memcache { }
-	debugLog("Memcache Initiert","Memcache als cache_option gewaehlt",__FILE__,__LINE__);
-} elseif(CACHE_OPTION == CACHE_MYMATES) {
-	class cache extends cache_myMates { }
-	debugLog("cache wurde initiert","standard cache wurde initiert",__FILE__,__LINE__);
-}
 
- /*
+ /**
   * cache class Memcache
   *
   * cache management
   * based on the memcache lib
   */
- class cache_memcache {
+ if(CACHE_OPTION == CACHE_MEMCACHE) {
+ class cache {
 		var $server;
 		var $inst;
 
-		/*
+		/**
 		 * Construct
 		 */
 		function __construct () {
@@ -33,55 +27,55 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 			}
 		}
 
-		/*
+		/**
 		 * adds object to the cache
 		 *
-		 * return bool
-		 * @param key
-		 * @param value
-		 * @param expires
+		 * @return boolean success
+		 * @param String key
+		 * @param String value
+		 * @param Integer expires
 		 */
 		function add($key, $pVal, $exp = 0) {
 			return $this->inst->add($key,$pVal,0,$exp);
 		}
 
-		/*
+		/**
 		 * updates cache object
 		 * the actual time is to sum with the expire time
 		 *
-		 * return bool
-		 * @param key
-		 * @param value
-		 * @param expires
+		 * @return boolean success
+		 * @param String key
+		 * @param String value
+		 * @param Integer expires
 		 */
 		function set($key, $pVal, $exp) {
 			return $this->inst->set($key,$pVal,0,$exp);
 		}
 
-		/*
+		/**
 		 * retrieve object from cache
 		 *
-		 * return mixed
-		 * @param key
+		 * @return mixed result
+		 * @param String key
 		 */
 		function get($key) {
 			return $this->inst->get($key);
 		}
 
-		/*
+		/**
 		 * deletes object from cache
 		 *
-		 * return bool
-		 * @param key
+		 * @return boolean success
+		 * @param String key
 		 */
 		function delete($key) {
 			return $this->inst->delete($key);
 		}
 
-		/*
+		/**
 		 * cleans whole cache
 		 *
-		 * return bool
+		 * @return boolean success
 		 */
 		function clean($all = false) {
 			if($all) {
@@ -89,40 +83,31 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 			}
 		}
  }
+debugLog("Memcache Initiert","Memcache als cache_option gewaehlt",__FILE__,__LINE__);
 
- /*
-  * TABLE FÜR DIE CACHE FILES
-  *
-  * CREATE TABLE IF NOT EXISTS `fileCache` (
-  *		`key` varchar(50) NOT NULL,
-  * 	`expires` int(10) unsigned NOT NULL,
-  * 	`size` int(10) unsigned NOT NULL,
-  * 	PRIMARY KEY  (`key`)
-  *	) TYPE=MyISAM;
-  */
-
- /*
+} elseif(CACHE_OPTION == CACHE_MYMATES) {
+ /**
   * cache class mymates
   *
   * cache management
   */
- class cache_myMates {
+ class cache {
 		var $db;
 
-		/*
+		/**
 		 * Construct
 		 */
 		function __construct() {
 			$this->db = _new("db");
 		}
 
-		/*
+		/**
 		 * adds object to the cache
 		 *
-		 * return bool
-		 * @param key
-		 * @param value
-		 * @param expires
+		 * @return bool success
+		 * @param String key
+		 * @param String value
+		 * @param Integer expires
 		 */
 		function add($key, $pVal, $exp = 0) {
 			$file = CACHE_DIR.md5($key).".cache";
@@ -134,14 +119,14 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 
 		}
 
-		/*
+		/**
 		 * updates cache object
 		 * the actual time is to sum with the expire time
 		 *
-		 * return bool
-		 * @param key
-		 * @param value
-		 * @param expires
+		 * @return bool
+		 * @param String key
+		 * @param String value
+		 * @param Integer expires
 		 */
 		function set($key, $pVal, $exp) {
 			$file = CACHE_DIR.md5($key).".cache";
@@ -159,11 +144,11 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 			}
 		}
 
-		/*
+		/**
 		 * retrieve object from cache
 		 *
-		 * return mixed
-		 * @param key
+		 * @return mixed
+		 * @param String key
 		 */
 		function get($key) {
 			global $__cachemem;
@@ -183,11 +168,11 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 			}
 		}
 
-		/*
+		/**
 		 * deletes object from cache
 		 *
-		 * return bool
-		 * @param key
+		 * @return bool
+		 * @param String key
 		 */
 		function delete($key) {
 			$file = CACHE_DIR.md5($key).".cache";
@@ -201,10 +186,10 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 			}
 		}
 
-		/*
+		/**
 		 * cleans whole cache
 		 *
-		 * return bool
+		 * @return bool
 		 */
 		function clean($all = false) {
 			if(!$all) {
@@ -230,5 +215,8 @@ if(CACHE_OPTION == CACHE_MEMCACHE) {
 				debugLog("Cache Folder geleert","Cache Ordner wurde erfolgreich geleert",__FILE__,__LINE__);
 			}
 		}
+ }
+debugLog("cache wurde initiert","standard cache wurde initiert",__FILE__,__LINE__);
+
  }
 ?>

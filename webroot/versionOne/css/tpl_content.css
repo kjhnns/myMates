@@ -4,6 +4,8 @@
 	border: 3px #FFDC3A solid;
 	background-color: #FFFDBF;
 	min-height: 100px;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
 }
 
 .box_warning {
@@ -12,6 +14,8 @@
 	border: 3px #D00101 solid;
 	background-color: #FFFDBF;
 	min-height: 100px;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
 }
 
 .box_error {
@@ -20,40 +24,47 @@
 	border: 3px #D00101 solid;
 	background-color: #FFB1B1;
 	min-height: 50px;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
 }
 
 .box_n {
 	margin: 5px;
 	padding: 5px;
-	border: 1px #888888 solid;
+	border: 1px #CCC solid;
 	background-color: #EEEEEE;
 	min-height: 100px;
 	text-align: justify;
 	color: #555555;
+	border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
 }
 
 .box {
 	margin: 20px;
 	padding: 15px;
-	border: 1px #888888 solid;
+	border: 1px #CCC solid;
 	background-color: #EEEEEE;
 	min-height: 100px;
 	text-align: justify;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
 }
 
 .box_infoWrapper {
-	padding: 15px;
+	padding: 50px;
 	border: 3px #FFDC3A solid;
 	background-color: #FFFECF;
-	min-height: 100px;
 	display:none;
 	position: absolute;
 	left: 50%;
 	top: 35px;
 	margin: 0px;
-	margin-left: -25%;
-	width: 50%;
-	min-height: 200px;
+	margin-left: -39%;
+	width: 70%;
+	min-height: 300px;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
 }
 
 #smallHeader {

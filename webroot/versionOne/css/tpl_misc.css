@@ -10,6 +10,8 @@
 
 .avatar{
 	border: 1px #888888 solid;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 #chatText {
@@ -31,6 +33,8 @@
 	text-align: left;
 	overflow: scroll;
 	overflow-x: hidden;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 #dynTitle {
@@ -50,7 +54,7 @@
 .nItem {
 	height: 23px;
 	background-color: #FEFEFE;
-	border-bottom: 1px #000000 solid;
+	border-bottom: 1px #AAA solid;
 	font-size: 12px;
 	font-family: "Trebuchet MS", Arial, Verdana;
 	padding:0px;
@@ -293,8 +297,9 @@
 	width: 70%;
 	padding: 5px;
 	margin-bottom: 10px;
-	border-bottom: 2px #CCCCCC solid;
-	border-right: 2px #CCCCCC solid;
+	border: 1px #CCCCCC solid;
+	border-radius: 8px 8px 8px 8px;
+	-moz-border-radius: 8px 8px 8px 8px;
 }
 
 .commentBox {
@@ -303,8 +308,9 @@
 	width: 70%;
 	padding: 5px;
 	margin-bottom: 15px;
-	border-bottom: 2px #CCCCCC solid;
-	border-right: 2px #CCCCCC solid;
+	border: 1px #CCCCCC solid;
+	border-radius: 8px 8px 8px 8px;
+	-moz-border-radius: 8px 8px 8px 8px;
 }
 
 .btitle {
@@ -364,8 +370,17 @@
 	padding: 3px;
 	color: #FFFFFF;
 	margin-right: 10px;
+	padding-left: 8px;
 	width: 125px;
+	border-radius: 8px 8px 0px 0px;
+	-moz-border-radius: 8px 8px 0px 0px;
 }
+
+.roundPic {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
 .pline {
 	border-bottom: 3px #3B5998 solid;
 }

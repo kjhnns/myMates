@@ -14,36 +14,37 @@ if($_GET['section'] == 'comment') {
 }
 
 
-
 // CHANGELOG
 if($_GET['section'] == 'clog') {
 	if($_GET['action'] == 'post') {
 		define("DEBUG", false);
-		define("NOLASTACTREFRESH", true);
+		define("NOLASTACTREFRESH", false);
 		include("./lib/init.php");
 
+		$cl = _new("changelog");
 		if($_REQUEST['key'] == 'clogstatus') {
 			$_prefs['user']->statusUpdate(utf8_decode($_REQUEST['text']),html($_REQUEST['key']));
-			putChangelog(CLOG_PUBLIC, CLOG_STATUS, UID, false, utf8_decode($_REQUEST['text']));
+			$cl->post(CLOG_PUBLIC, CLOG_STATUS, UID, false, utf8_decode($_REQUEST['text']));
 			$cache = _new("cache");	$cache->set("changelog_change",time(),time()+day);
 		}
 		if($_REQUEST['key'] == 'cloglink') {
-			putChangelog(CLOG_PUBLIC, CLOG_LINK, UID, false, urlencode($_REQUEST['text']));
+			$cl->post(CLOG_PUBLIC, CLOG_LINK, UID, false, urlencode($_REQUEST['text']));
 			$cache = _new("cache");	$cache->set("changelog_change",time(),time()+day);
 		}
 	} elseif($_GET['action'] == 'fetch') {
 		define("DEBUG", false);
-		define("NOLASTACTREFRESH", true);
+		define("NOLASTACTREFRESH", false);
 		include("./lib/init.php");
 
 		$parser = _new("parser");
-		$clog = changelog();
+		$cl = _new("changelog");
+		$clog=$cl->read();
 		$parser->assign("log", $clog);
 		$parser->display("misc/clog.tpl");
 		$_SESSION['lastChangelog_refresh_'.UID] = time();
 	} elseif($_GET['action'] == 'whatsup') {
 		define("DEBUG", false);
-		define("NOLASTACTREFRESH", true);
+		define("NOLASTACTREFRESH", false);
 		include("./lib/init.php");
 
 		$cache = _new("cache");
@@ -56,12 +57,10 @@ if($_GET['section'] == 'clog') {
 	} elseif($_GET['action'] == 'delete') {
 		include("./lib/init.php");
 		$parser = _new("parser");
-		$db = _new("db");
-		$res = $db->saveQry("DELETE FROM `#_changelog` WHERE `ID` = ? AND `by` = ?",$_GET['id'],UID);
-		$c = _new("cache");	$c->delete("changelog_content"); $_SESSION['lastChangelog_refresh_'.UID] = 0;
+		$cl = _new("changelog");
+		$res = $cl->delete($_GET['id']);
 		if($res !== FALSE) {
 			$parser->assign("delresult","2");
-			$db->saveQry("DELETE FROM `#_comments` WHERE `cat_id` = 'clog' AND `cat_item` = ?",$_GET['id']);
 		} else {
 			$parser->assign("delresult","1");
 		}
@@ -78,7 +77,7 @@ if($_GET['section'] == 'clog') {
 //attendance Status
 if($_GET['section'] == 'attStatus') {
 	define("DEBUG", false);
-	define("NOLASTACTREFRESH", true);
+	define("NOLASTACTREFRESH", false);
 	include("./lib/init.php");
 
 	$id = md5($_POST['threadID'].UID);
@@ -94,7 +93,7 @@ if($_GET['section'] == 'attStatus') {
 //USER PROFILES
 if($_GET['section'] == 'profile') {
 	define("DEBUG", false);
-	define("NOLASTACTREFRESH", true);
+	define("NOLASTACTREFRESH", false);
 	include("./lib/init.php");
 	if($_POST['text'] != "" && $_POST['user'] != UID) {
 	$db = _new("db");
@@ -123,7 +122,7 @@ if($_GET['section'] == 'chat') {
 		 		$sbt['fetch'] = time()-1;$sbt['post'] = time();
 		 	}
 			$sbcache = $cache->get("sbCache");
-			if($sbt['post'] >= $sbt['fetch']){
+			if($sbt['post'] >= $sbt['fetch']) {
 				$db = _new("db");
 				$db->saveQry("SELECT * FROM `#_sbox` ORDER BY `ID` DESC LIMIT 0,".CHATBOXPOSTS);
 				$sbcache = ""; $first = true;
@@ -143,7 +142,8 @@ if($_GET['section'] == 'chat') {
 				$cache->set("sbTimes", $sbt, time()+WEEK);
 				$sbcache =  sprintf(tplCfg("chatboxrownew"),$sbFirst,$sbcache);
 			}
-			echo $sbcache;
+			$sess = _new("session");
+			echo sprintf(tplCfg("chatboxonlineuser"),$sess->online(),$sess->online(),$sbcache);
 	 	}elseif($_GET['act'] == 'write') {
 			define("DEBUG", false);
 			define("NOLASTACTREFRESH", false);

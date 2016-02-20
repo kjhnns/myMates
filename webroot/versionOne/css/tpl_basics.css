@@ -35,11 +35,14 @@ a:hover {
 label { cursor: pointer; }
 
 input {
-	border: 1px #888888 solid;
+	border: 1px #AAA solid;
 	background-color: #FFFFFF;
 	font-size: 12px;
 	padding: 4px;
+	color: #333;
 	font-family: Verdana, Arial, "Trebuchet MS";
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 select {
@@ -47,15 +50,19 @@ select {
 	background-color: #FFFFFF;
 	font-size: 10px;
 	font-family: Verdana, Arial, "Trebuchet MS";
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 textarea {
-	border: 1px #888888 solid;
+	border: 1px #AAA solid;
 	background-color: #FFFFFF;
 	font-size: 12px;
 	font-family: Verdana, Arial, "Trebuchet MS";
 	line-height: 1.5em;
 	padding: 4px;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 h1 {
@@ -64,8 +71,17 @@ h1 {
 	background-color: #5772AB;
 	border-bottom: 3px #3B5998 solid;
 	padding: 3px;
+	padding-left: 8px;
+	padding-top: 5px;
 	color: #FFFFFF;
 	margin: 5px;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
+h1 img {
+	float:left;
+	padding-right: 13px;
 }
 
 h2 {

@@ -5,7 +5,6 @@
  * (c) by Johannes Klumpe | joh.klumpe@gmail.com
  */
 include("./lib/init.php");
-$parser = _new("parser");
 
 if(!(isset($_GET['action']) && $_GET['action'] != "")) {
 	$_GET['action'] = "index";

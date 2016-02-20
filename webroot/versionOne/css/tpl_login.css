@@ -78,6 +78,8 @@ h1 {
 	font-family: Verdana, Arial, "Trebuchet MS";
 	font-size: 10px;
 	padding: 10px;
+	border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
 }
 
 #header {
@@ -115,6 +117,8 @@ h1 {
 	color: #FFFFFF;
 	font-weight: bold;
 	overflow: hidden;
+	border-radius: 0px 20px 0px 0px;
+	-moz-border-radius: 0px 20px 0px 0px;
 }
 
 #box_area {
@@ -129,6 +133,8 @@ h1 {
 	border: 1px #000000 solid;
 	color: #000000;
 	padding: 10px;
+	border-radius: 20px 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
 }
 
 #rights {

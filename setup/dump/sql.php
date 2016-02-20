@@ -108,6 +108,7 @@ $tables[] = 'CREATE TABLE IF NOT EXISTS `#_sbox` (
 $tables[] = 'CREATE TABLE IF NOT EXISTS `#_settings` (
   `key` varchar(50) NOT NULL,
   `value` varchar(200) NOT NULL,
+  `rowType` enum(\'epp\',\'attribute\') NOT NULL,
   UNIQUE KEY `key` (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;';
 
