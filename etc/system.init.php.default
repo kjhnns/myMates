@@ -75,7 +75,7 @@ define("RANDUNIQUESTRING", "");
 define("CRYPTSTRING", RANDUNIQUESTRING); // Diese Funktion kann bei greren Benutzeraufrufen den Server zustzlich belasten aber auch gleichzeitig zur Fehlerbeseitigung beitragen.
 define("PASSWORDUNIQUESTRING", RANDUNIQUESTRING);
 define("LOGINCOOKIELIFETIME", intval(time() + YEAR * 2));
-define("COPYRIGHT", "&copy; by zigeuner51@gmail.com"); // Copyright DONT REMOVE!!!
+define("COPYRIGHT", "&copy; by "); // Copyright DONT REMOVE!!!
 define("CACHE_OPTION", CACHE_MYMATES); // Optional CACHE_MEMCACHE
 
 ?>
